@@ -1,13 +1,13 @@
-type Creation = {
+type Project = {
   title: string;
-  href: string;
-  dateTime: string;
+  href?: string;
+  dateTime?: string;
   displayDate: string;
   description: string;
   supportingLinks?: { label: string; href: string }[];
 };
 
-export const creations: Creation[] = [
+export const projects: Project[] = [
   {
     title: "Recall",
     href: "https://github.com/Abhiroop25902/recall",
@@ -97,6 +97,58 @@ export const creations: Creation[] = [
     ],
   },
   {
+    title: "Computer Science Coursework · IIEST Shibpur",
+    displayDate: "2020–2023",
+    description:
+      "Undergraduate programming, systems, and digital-circuit lab work spanning data structures, algorithms, microprocessors, graphics, databases, compilers, and AI/ML.",
+    supportingLinks: [
+      {
+        label: "Data Structures",
+        href: "https://1drv.ms/f/c/5fbc6062963ca2c0/IgDAojyWYmC8IIBf7kkAAAAAAWQf178B9xvGbTda_RUJQQ8?e=xgeRc5",
+      },
+      {
+        label: "Digital Logic",
+        href: "https://1drv.ms/f/c/5fbc6062963ca2c0/IgDAojyWYmC8IIBf70kAAAAAAWpHkBUfPcel4VWr8MEQYAc?e=SuS8v5",
+      },
+      {
+        label: "Programming Paradigms",
+        href: "https://github.com/Abhiroop25902/CS-2273-PP-Lab",
+      },
+      {
+        label: "Algorithms",
+        href: "https://github.com/Abhiroop25902/CS-2271-Algo-Lab",
+      },
+      {
+        label: "Microprocessors",
+        href: "https://github.com/Abhiroop25902/CS3171-Microprocessor-Lab",
+      },
+      {
+        label: "Computer Graphics",
+        href: "https://github.com/Abhiroop25902/CS-3181-Graphics",
+      },
+      {
+        label: "Operating Systems",
+        href: "https://github.com/Abhiroop25902/CS3271-Operating-Systems-Lab",
+      },
+      {
+        label: "Databases",
+        href: "https://github.com/Abhiroop25902/CS-3172-DBMS-Lab",
+      },
+      {
+        label: "Compiler Design",
+        href: "https://github.com/Abhiroop25902/CS-4171-Compiler-Design-Lab",
+      },
+      {
+        label: "Machine Learning",
+        href: "https://github.com/Abhiroop25902/CS-4172-ML-Lab",
+      },
+      {
+        label: "Artificial Intelligence",
+        href: "https://github.com/Abhiroop25902/CS4271-AI-Lab",
+      },
+    ],
+  },
+  {
     title: "Pokémon Image Generator",
     href: "https://abhiroop25902.github.io/pokemon-image-generator/",
     dateTime: "2023-01",
@@ -109,6 +161,14 @@ export const creations: Creation[] = [
         href: "https://github.com/Abhiroop25902/pokemon-image-generator",
       },
     ],
+  },
+  {
+    title: "Classical Cipher Classification",
+    href: "https://github.com/Abhiroop25902/Major-Project",
+    dateTime: "2022-12",
+    displayDate: "Dec 2022",
+    description:
+      "B.Tech team research project exploring CNN and transformer approaches to identifying classical cipher types from encrypted text.",
   },
   {
     title: "Flutter Whiteboard",
@@ -147,6 +207,14 @@ export const creations: Creation[] = [
     displayDate: "Jun 2021",
     description:
       "A Python script that periodically checked CoWIN vaccination slots at selected centers and sent desktop notifications when slots became available.",
+  },
+  {
+    title: "Video-based Social Distancing Monitor",
+    href: "https://github.com/Abhiroop25902/Mini-Project",
+    dateTime: "2020-11",
+    displayDate: "Nov 2020",
+    description:
+      "Team computer-vision prototype using YOLOv3 and OpenCV to analyze recorded video and visualize proximity warnings.",
   },
   {
     title: "Video AI Upscaling",
