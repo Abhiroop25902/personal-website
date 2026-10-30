@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://abhiroop.dev"),
   title: "Abhiroop Mukherjee",
   description:
-    "Application Software Engineer 2 @Oracle\nCS @IIEST",
+    "Application Software Engineer 2 @Oracle | CS @IIEST",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
