@@ -13,6 +13,16 @@ export default function Home() {
       >
         View all projects →
       </Link>
+      <p className="mt-6 text-sm leading-6 text-foreground/65">
+        Outside of code, I stream games as{" "}
+        <a
+          href="https://www.youtube.com/@devastrator25902"
+          className="rounded-sm underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+        >
+          Devastrator
+        </a>
+        .
+      </p>
     </main>
   );
 }
