@@ -1,5 +1,5 @@
-import { FiFileText, FiGithub, FiLinkedin } from "react-icons/fi";
-import { SiGooglescholar } from "react-icons/si";
+import ProfileLink from "@/app/components/ProfileLink";
+import {personalLinks} from "@/app/data/personal_links";
 
 export default function ProfileHeader() {
   return (
@@ -15,46 +15,9 @@ export default function ProfileHeader() {
 
       <nav aria-label="Personal links" className="shrink-0">
         <ul className="flex gap-2">
-          <li>
-            <a
-              href="https://github.com/Abhiroop25902/cv/blob/main/abhiroopCV.pdf"
-              aria-label="View CV"
-              title="View CV"
-              className="profile-link inline-flex size-11 items-center justify-center rounded-full text-foreground/70 hover:bg-foreground/5 hover:text-foreground focus-visible:bg-foreground/5 focus-visible:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-            >
-              <FiFileText size={20} strokeWidth={1.5} aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Abhiroop25902"
-              aria-label="GitHub"
-              title="GitHub"
-              className="profile-link inline-flex size-11 items-center justify-center rounded-full text-foreground/70 hover:bg-foreground/5 hover:text-foreground focus-visible:bg-foreground/5 focus-visible:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-            >
-              <FiGithub size={20} strokeWidth={1.5} aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/abhiroop25902/"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-              className="profile-link inline-flex size-11 items-center justify-center rounded-full text-foreground/70 hover:bg-foreground/5 hover:text-foreground focus-visible:bg-foreground/5 focus-visible:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-            >
-              <FiLinkedin size={20} strokeWidth={1.5} aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://scholar.google.com/citations?user=nMuXGfwAAAAJ&hl=en"
-              aria-label="Google Scholar"
-              title="Google Scholar"
-              className="profile-link inline-flex size-11 items-center justify-center rounded-full text-foreground/70 hover:bg-foreground/5 hover:text-foreground focus-visible:bg-foreground/5 focus-visible:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-            >
-              <SiGooglescholar size={20} aria-hidden="true" />
-            </a>
-          </li>
+          {personalLinks.map((link) => (
+            <ProfileLink key={link.href} {...link} />
+          ))}
         </ul>
       </nav>
     </header>
