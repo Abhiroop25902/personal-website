@@ -4,12 +4,14 @@ type Project = {
   dateTime?: string;
   displayDate: string;
   description: string;
+  featured?: boolean;
   supportingLinks?: { label: string; href: string }[];
 };
 
 export const projects: Project[] = [
   {
     title: "Recall",
+    featured: true,
     href: "https://github.com/Abhiroop25902/recall",
     dateTime: "2026-09",
     displayDate: "Sep 2026",
@@ -18,6 +20,7 @@ export const projects: Project[] = [
   },
   {
     title: "Mindful Bites",
+    featured: true,
     href: "https://food-tracker-25902.web.app/",
     dateTime: "2026-04",
     displayDate: "Apr 2026",
@@ -32,6 +35,7 @@ export const projects: Project[] = [
   },
   {
     title: "Sentinel",
+    featured: true,
     href: "https://sentinel.abhiroop.dev/",
     dateTime: "2026-03",
     displayDate: "Mar 2026",
