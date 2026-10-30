@@ -25,6 +25,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.timeline-entry:focus-within .timeline-dot {
+  background-color: var(--foreground);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .timeline-entry:hover .timeline-dot {
+    background-color: var(--foreground);
+  }
+}
+
 @keyframes homepage-enter {
   from {
     opacity: 0;
@@ -56,8 +66,13 @@ body {
   }
 
   .profile-link > svg,
-  .projects-link-arrow {
+  .projects-link-arrow,
+  .back-link-arrow {
     transition: transform 180ms ease-out;
+  }
+
+  .timeline-dot {
+    transition: transform 180ms ease-out, background-color 180ms ease-out;
   }
 
   .profile-link:focus-visible > svg {
@@ -68,6 +83,14 @@ body {
     transform: translateX(4px);
   }
 
+  .back-link:focus-visible .back-link-arrow {
+    transform: translateX(-4px);
+  }
+
+  .timeline-entry:focus-within .timeline-dot {
+    transform: scale(1.2);
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .profile-link:hover > svg {
       transform: translateY(-2px);
@@ -75,6 +98,14 @@ body {
 
     .projects-link:hover .projects-link-arrow {
       transform: translateX(4px);
+    }
+
+    .back-link:hover .back-link-arrow {
+      transform: translateX(-4px);
+    }
+
+    .timeline-entry:hover .timeline-dot {
+      transform: scale(1.2);
     }
   }
 }

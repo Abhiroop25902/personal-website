@@ -1,17 +1,18 @@
 import { projects } from "@/app/data/projects";
+import TimelineReveal from "@/app/components/TimelineReveal";
 
 export default function ProjectTimeline() {
   return (
-    <section aria-label="Project timeline" className="mt-10 sm:mt-12">
+    <TimelineReveal>
       <ol role="list" className="space-y-10 border-l border-foreground/20">
         {projects.map((project) => (
           <li
             key={project.href ?? project.title}
-            className="relative pb-2 pl-7"
+            className="timeline-entry relative pb-2 pl-7"
           >
             <span
               aria-hidden="true"
-              className="absolute -left-1.25 top-1.5 size-2.5 rounded-full bg-foreground/60"
+              className="timeline-dot absolute -left-1.25 top-1.5 size-2.5 rounded-full bg-foreground/60"
             />
             {project.dateTime ? (
               <time
@@ -62,6 +63,6 @@ export default function ProjectTimeline() {
           </li>
         ))}
       </ol>
-    </section>
+    </TimelineReveal>
   );
 }
