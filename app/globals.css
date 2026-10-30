@@ -25,6 +25,103 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.homepage-surprise-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.homepage-surprise-piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  white-space: pre;
+  transform-origin: center;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.homepage-surprise-piece:active {
+  cursor: grabbing;
+}
+
+.homepage-surprise-trigger {
+  position: fixed;
+  z-index: 10;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  left: 50%;
+  min-width: 96px;
+  min-height: 44px;
+  padding: 8px 16px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  color: var(--foreground);
+  background: transparent;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.homepage-surprise-trigger::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 6px);
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--foreground);
+  opacity: 0.12;
+}
+
+.homepage-surprise-label {
+  opacity: 0;
+}
+
+.homepage-surprise-trigger:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+.homepage-surprise-trigger:focus-visible,
+.homepage-surprise-trigger[data-revealed] {
+  background: var(--background);
+}
+
+.homepage-surprise-trigger:focus-visible .homepage-surprise-label,
+.homepage-surprise-trigger[data-revealed] .homepage-surprise-label {
+  opacity: 1;
+}
+
+.homepage-surprise-trigger:focus-visible::before,
+.homepage-surprise-trigger[data-revealed]::before {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .homepage-surprise-trigger:hover {
+    background: var(--background);
+  }
+
+  .homepage-surprise-trigger:hover .homepage-surprise-label {
+    opacity: 1;
+  }
+
+  .homepage-surprise-trigger:hover::before {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-surprise-trigger {
+    display: none;
+  }
+}
+
 .timeline-entry:focus-within .timeline-dot {
   background-color: var(--foreground);
 }
