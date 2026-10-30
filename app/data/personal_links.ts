@@ -1,4 +1,4 @@
-import {FaFileLines, FaGithub, FaGoogleScholar, FaLinkedin} from "react-icons/fa6";
+import {FaEnvelope, FaFileLines, FaGithub, FaGoogleScholar, FaLinkedin} from "react-icons/fa6";
 
 export const personalLinks = [
     {
@@ -20,5 +20,10 @@ export const personalLinks = [
         href: "https://scholar.google.com/citations?user=nMuXGfwAAAAJ&hl=en",
         label: "Google Scholar",
         icon: FaGoogleScholar,
+    },
+    {
+        href: "mailto:abhiroop.m25902@gmail.com",
+        label: "Email abhiroop.m25902@gmail.com",
+        icon: FaEnvelope,
     },
 ];
