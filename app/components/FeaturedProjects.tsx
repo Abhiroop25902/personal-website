@@ -6,8 +6,12 @@ export default function FeaturedProjects() {
       <ul role="list" className="space-y-8">
         {projects
           .filter((project) => project.featured)
-          .map((project) => (
-            <li key={project.href ?? project.title}>
+          .map((project, index) => (
+            <li
+              key={project.href ?? project.title}
+              className="motion-enter"
+              style={{ animationDelay: `${120 + index * 60}ms` }}
+            >
               <h2 className="text-xl font-medium tracking-tight">
                 {project.href ? (
                   <a

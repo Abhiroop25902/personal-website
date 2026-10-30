@@ -9,9 +9,12 @@ export default function Home() {
       <FeaturedProjects />
       <Link
         href="/projects"
-        className="mt-8 inline-flex min-h-11 items-center rounded-sm text-sm text-foreground/65 underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+        className="projects-link mt-8 inline-flex min-h-11 items-center gap-1 rounded-sm text-sm text-foreground/65 underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
       >
-        View all projects →
+        View all projects
+        <span aria-hidden="true" className="projects-link-arrow inline-block">
+          →
+        </span>
       </Link>
       <p className="mt-6 text-sm leading-6 text-foreground/65">
         Outside of code, I stream games as{" "}
