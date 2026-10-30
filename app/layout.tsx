@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abhiroop.dev"),
   title: "Abhiroop Mukherjee",
   description:
     "Application Software Engineer 2 @Oracle | CS @IIEST. Explore Abhiroop Mukherjee's growing archive of projects, tools, and experiments.",
