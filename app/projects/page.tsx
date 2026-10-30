@@ -4,6 +4,11 @@ import ProjectTimeline from "@/app/components/ProjectTimeline";
 
 export const metadata: Metadata = {
   title: "All projects | Abhiroop Mukherjee",
+  description:
+    "Projects by Abhiroop Mukherjee, spanning AI tools, web apps, C++ experiments, and computer science coursework.",
+  alternates: {
+    canonical: "https://abhiroop.dev/projects",
+  },
 };
 
 export default function Projects() {

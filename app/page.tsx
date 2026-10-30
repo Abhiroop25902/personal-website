@@ -1,6 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import FeaturedProjects from "@/app/components/FeaturedProjects";
 import ProfileHeader from "@/app/components/ProfileHeader";
+import { personalLinks } from "@/app/data/personal_links";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://abhiroop.dev/",
+  },
+};
+
+const profile = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: "https://abhiroop.dev/",
+  mainEntity: {
+    "@type": "Person",
+    name: "Abhiroop Mukherjee",
+    url: "https://abhiroop.dev/",
+    description: "Application Software Engineer 2 @Oracle | CS @IIEST",
+    sameAs: personalLinks
+      .filter(({ label }) => ["GitHub", "LinkedIn", "Google Scholar"].includes(label))
+      .map(({ href }) => href),
+  },
+};
 
 export default function Home() {
   return (
@@ -26,6 +49,12 @@ export default function Home() {
         </a>
         .
       </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profile).replace(/</g, "\\u003c"),
+        }}
+      />
     </main>
   );
 }
