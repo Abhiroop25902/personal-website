@@ -11,6 +11,10 @@ export default function ProfileHeader() {
         <p className="motion-enter motion-enter-headline mt-4 text-base leading-7 text-foreground/65">
           Application Software Engineer 2 @Oracle | CS @IIEST
         </p>
+        <p className="motion-enter motion-enter-headline mt-3 max-w-xl text-base leading-7 text-foreground/80">
+          I turn curiosity into software, building tools and experiments across AI,
+          systems, and the web.
+        </p>
       </div>
 
       <nav aria-label="Personal links" className="shrink-0">

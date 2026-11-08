@@ -45,14 +45,22 @@ export default function ProjectTimeline() {
               <ul
                 role="list"
                 aria-label={`${project.title} supporting links`}
-                className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm"
+                className={`mt-3 gap-y-2 text-sm ${
+                  project.supportingLinksLayout === "columns"
+                    ? "grid grid-cols-1 gap-x-6 sm:grid-cols-2"
+                    : "flex flex-wrap gap-x-4"
+                }`}
               >
                 {project.supportingLinks.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
                       aria-label={`${project.title}: ${link.label}`}
-                      className="inline-flex min-h-6 items-center rounded-sm text-foreground/65 underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+                      className={`${
+                        project.supportingLinksLayout === "columns"
+                          ? "flex min-h-11"
+                          : "inline-flex min-h-6"
+                      } items-center rounded-sm text-foreground/65 underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground`}
                     >
                       {link.label}
                     </a>

@@ -5,6 +5,7 @@ type Project = {
   displayDate: string;
   description: string;
   featured?: boolean;
+  supportingLinksLayout?: "columns";
   supportingLinks?: { label: string; href: string }[];
 };
 
@@ -16,7 +17,7 @@ export const projects: Project[] = [
     dateTime: "2026-09",
     displayDate: "Sep 2026",
     description:
-      "Built a cloud-hosted memory service providing AI agents with project-scoped persistent context and semantic retrieval through MCP.",
+      "Persistent project memory for AI agents, provided by a cloud-hosted service with semantic retrieval through MCP.",
   },
   {
     title: "Mindful Bites",
@@ -25,7 +26,7 @@ export const projects: Project[] = [
     dateTime: "2026-04",
     displayDate: "Apr 2026",
     description:
-      "Built an AI-assisted meal-photo tracker that generated nutrition estimates and model-based well-being insights.",
+      "AI-assisted meal tracking from photos, with nutrition estimates and model-based well-being insights.",
     supportingLinks: [
       {
         label: "Source",
@@ -40,7 +41,7 @@ export const projects: Project[] = [
     dateTime: "2026-03",
     displayDate: "Mar 2026",
     description:
-      "Built a real-time monitoring dashboard using SolidJS, Web Workers, and a Pub/Sub-backed event ingestion pipeline.",
+      "A real-time dashboard for login events, using SolidJS, Web Workers, and a Pub/Sub-backed ingestion pipeline.",
     supportingLinks: [
       {
         label: "Frontend",
@@ -62,7 +63,7 @@ export const projects: Project[] = [
     dateTime: "2025-11",
     displayDate: "Nov 2025",
     description:
-      "Built a PCOD-focused nutrition app with meal logging, AI meal recommendations, and a background ingredient-sensitivity workflow.",
+      "A PCOD-focused nutrition app combining meal logging, AI meal recommendations, and a background ingredient-sensitivity workflow.",
     supportingLinks: [
       {
         label: "Frontend",
@@ -84,7 +85,7 @@ export const projects: Project[] = [
     dateTime: "2024-08",
     displayDate: "Aug 2024",
     description:
-      "Built a templated linked-list implementation to practise C++ tooling.",
+      "A templated linked-list implementation for practising C++ tooling.",
   },
   {
     title: "Random Color Changer",
@@ -92,7 +93,7 @@ export const projects: Project[] = [
     dateTime: "2023-09",
     displayDate: "Sep 2023",
     description:
-      "Built a TypeScript and jQuery page that changed the background to random hex colors with a smooth transition.",
+      "An experiment with random hex backgrounds and smooth color transitions, built with TypeScript and jQuery.",
     supportingLinks: [
       {
         label: "Source",
@@ -101,10 +102,11 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Computer Science Coursework · IIEST Shibpur",
+    title: "Computer Science Lab Work · IIEST Shibpur",
     displayDate: "2020–2023",
     description:
-      "Undergraduate programming, systems, and digital-circuit lab work spanning data structures, algorithms, microprocessors, graphics, databases, compilers, and AI/ML.",
+      "Undergraduate lab implementations and experiments across core computer science subjects, collected in 11 course repositories.",
+    supportingLinksLayout: "columns",
     supportingLinks: [
       {
         label: "Data Structures",
@@ -158,7 +160,7 @@ export const projects: Project[] = [
     dateTime: "2023-01",
     displayDate: "Jan 2023",
     description:
-      "Built a JavaScript page that displayed a random Pokémon’s name and official artwork using PokéAPI.",
+      "A JavaScript page pairing randomly selected Pokémon with their names and official artwork from PokéAPI.",
     supportingLinks: [
       {
         label: "Source",
@@ -172,7 +174,7 @@ export const projects: Project[] = [
     dateTime: "2022-12",
     displayDate: "Dec 2022",
     description:
-      "B.Tech team research project exploring CNN and transformer approaches to identifying classical cipher types from encrypted text.",
+      "A B.Tech team research project exploring CNNs and transformers for identifying classical cipher types from encrypted text.",
   },
   {
     title: "Flutter Whiteboard",
@@ -180,7 +182,7 @@ export const projects: Project[] = [
     dateTime: "2022-05",
     displayDate: "May 2022",
     description:
-      "Built a Flutter whiteboard with freehand drawing, color selection, adjustable stroke width, and canvas clearing.",
+      "A Flutter whiteboard with freehand drawing, color selection, adjustable stroke width, and canvas clearing.",
     supportingLinks: [
       {
         label: "Source",
@@ -194,7 +196,7 @@ export const projects: Project[] = [
     dateTime: "2022-02",
     displayDate: "Feb 2022",
     description:
-      "Built a Dart command-line tool for RSA key generation and message encryption and decryption.",
+      "RSA key generation, encryption, and decryption in a Dart command-line tool.",
   },
   {
     title: "C++ Trie",
@@ -202,7 +204,7 @@ export const projects: Project[] = [
     dateTime: "2021-12",
     displayDate: "Dec 2021",
     description:
-      "Built a templated trie in C++ to store and retrieve values by string keys.",
+      "A templated C++ trie for storing and retrieving values by string keys.",
   },
   {
     title: "CoWin Checker",
@@ -210,7 +212,7 @@ export const projects: Project[] = [
     dateTime: "2021-06",
     displayDate: "Jun 2021",
     description:
-      "A Python script that periodically checked CoWIN vaccination slots at selected centers and sent desktop notifications when slots became available.",
+      "A Python script that periodically checked vaccination slots at selected CoWIN centers and sent desktop notifications when slots became available.",
   },
   {
     title: "Video-based Social Distancing Monitor",
@@ -218,7 +220,7 @@ export const projects: Project[] = [
     dateTime: "2020-11",
     displayDate: "Nov 2020",
     description:
-      "Team computer-vision prototype using YOLOv3 and OpenCV to analyze recorded video and visualize proximity warnings.",
+      "A team computer-vision prototype that analyzed recorded video with YOLOv3 and OpenCV to visualize proximity warnings.",
   },
   {
     title: "Video AI Upscaling",
@@ -226,6 +228,6 @@ export const projects: Project[] = [
     dateTime: "2020-11",
     displayDate: "Nov 2020",
     description:
-      "Adapted an EDSR-based example for 3× video upscaling through Google Colab.",
+      "An adaptation of an EDSR-based example for 3× video upscaling in Google Colab.",
   },
 ];

@@ -1,10 +1,11 @@
-import {FaEnvelope, FaFileLines, FaGithub, FaGoogleScholar, FaLinkedin} from "react-icons/fa6";
+import {FaEnvelope, FaGithub, FaGoogleScholar, FaLinkedin} from "react-icons/fa6";
+import {TbFileCvFilled} from "react-icons/tb";
 
 export const personalLinks = [
     {
         href: "https://github.com/Abhiroop25902/cv/blob/main/abhiroopCV.pdf",
         label: "View CV",
-        icon: FaFileLines,
+        icon: TbFileCvFilled,
     },
     {
         href: "https://github.com/Abhiroop25902",
