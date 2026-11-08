@@ -17,7 +17,7 @@ export const projects: Project[] = [
     dateTime: "2026-09",
     displayDate: "Sep 2026",
     description:
-      "Persistent project memory for AI agents, provided by a cloud-hosted service with semantic retrieval through MCP.",
+      "Keeps project decisions and context available to AI agents across sessions, with semantic search to retrieve relevant memories.",
   },
   {
     title: "Mindful Bites",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     dateTime: "2026-03",
     displayDate: "Mar 2026",
     description:
-      "A real-time dashboard for login events, using SolidJS, Web Workers, and a Pub/Sub-backed ingestion pipeline.",
+      "Monitors login events in real time, using Web Workers to process incoming data off the browser’s UI thread.",
     supportingLinks: [
       {
         label: "Frontend",
