@@ -1,35 +1,37 @@
+import Link from "next/link";
+import ContentEntry from "@/app/components/ContentEntry";
+import ContentSection from "@/app/components/ContentSection";
 import { projects } from "@/app/data/projects";
 
 export default function FeaturedProjects() {
   return (
-    <section aria-label="Selected projects" className="mt-10 sm:mt-12">
+    <ContentSection title="In Code" headingId="in-code-heading">
       <ul role="list" className="space-y-8">
         {projects
           .filter((project) => project.featured)
           .map((project, index) => (
             <li
               key={project.href ?? project.title}
-              className="motion-enter"
+              className="motion-enter mb-6"
               style={{ animationDelay: `${120 + index * 60}ms` }}
             >
-              <h2 className="text-xl font-medium tracking-tight">
-                {project.href ? (
-                  <a
-                    href={project.href}
-                    className="rounded-sm underline decoration-foreground/25 underline-offset-4 hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-                  >
-                    {project.title}
-                  </a>
-                ) : (
-                  project.title
-                )}
-              </h2>
-              <p className="mt-3 max-w-2xl text-base leading-7 text-foreground/65">
-                {project.description}
-              </p>
+              <ContentEntry
+                title={project.title}
+                href={project.href}
+                description={project.description}
+              />
             </li>
           ))}
       </ul>
-    </section>
+      <Link
+        href="/projects"
+        className="projects-link mt-0 inline-flex min-h-11 items-center gap-1 rounded-sm text-sm text-foreground/65 underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+      >
+        View all projects
+        <span aria-hidden="true" className="projects-link-arrow inline-block">
+          →
+        </span>
+      </Link>
+    </ContentSection>
   );
 }

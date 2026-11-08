@@ -169,12 +169,18 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Classical Cipher Classification",
+    title: "Classical Cipher Classification (Research Project)",
     href: "https://github.com/Abhiroop25902/Major-Project",
     dateTime: "2022-12",
     displayDate: "Dec 2022",
     description:
       "A B.Tech team research project exploring CNNs and transformers for identifying classical cipher types from encrypted text.",
+    supportingLinks: [
+      {
+        label: "Published paper (2023)",
+        href: "https://link.springer.com/chapter/10.1007/978-981-99-3734-9_25",
+      },
+    ],
   },
   {
     title: "Flutter Whiteboard",

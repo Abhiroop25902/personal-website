@@ -3,13 +3,13 @@
 import { type ReactNode, useEffect, useRef } from "react";
 
 export default function TimelineReveal({ children }: { children: ReactNode }) {
-  const sectionRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section || !("IntersectionObserver" in window)) return;
+    const container = containerRef.current;
+    if (!container || !("IntersectionObserver" in window)) return;
 
-    const entries = section.querySelectorAll<HTMLElement>(
+    const entries = container.querySelectorAll<HTMLElement>(
       ":scope > ol > .timeline-entry",
     );
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -36,7 +36,7 @@ export default function TimelineReveal({ children }: { children: ReactNode }) {
     const revealFocused = (event: FocusEvent) => {
       if (!(event.target instanceof Element)) return;
       const entry = event.target.closest(".timeline-entry");
-      if (!entry || !section.contains(entry)) return;
+      if (!entry || !container.contains(entry)) return;
 
       seen.add(entry);
       observer.unobserve(entry);
@@ -53,9 +53,9 @@ export default function TimelineReveal({ children }: { children: ReactNode }) {
       }
     };
 
-    section.addEventListener("focusin", revealFocused);
-    section.addEventListener("animationend", clearAnimation);
-    section.addEventListener("animationcancel", clearAnimation);
+    container.addEventListener("focusin", revealFocused);
+    container.addEventListener("animationend", clearAnimation);
+    container.addEventListener("animationcancel", clearAnimation);
 
     for (const entry of entries) {
       observer.observe(entry);
@@ -64,20 +64,12 @@ export default function TimelineReveal({ children }: { children: ReactNode }) {
     return () => {
       active = false;
       observer.disconnect();
-      section.removeEventListener("focusin", revealFocused);
-      section.removeEventListener("animationend", clearAnimation);
-      section.removeEventListener("animationcancel", clearAnimation);
+      container.removeEventListener("focusin", revealFocused);
+      container.removeEventListener("animationend", clearAnimation);
+      container.removeEventListener("animationcancel", clearAnimation);
       for (const entry of entries) entry.classList.remove("motion-enter");
     };
   }, []);
 
-  return (
-    <section
-      ref={sectionRef}
-      aria-label="Project timeline"
-      className="mt-10 sm:mt-12"
-    >
-      {children}
-    </section>
-  );
+  return <div ref={containerRef}>{children}</div>;
 }

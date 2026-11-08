@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ContentEntry from "@/app/components/ContentEntry";
+import ContentSection from "@/app/components/ContentSection";
 import FeaturedProjects from "@/app/components/FeaturedProjects";
 import ProfileHeader from "@/app/components/ProfileHeader";
 import HomepageSurprise from "@/app/components/HomepageSurprise";
@@ -31,17 +32,24 @@ export default function Home() {
     <HomepageSurprise>
       <main className="mx-auto min-h-svh w-full max-w-5xl flex-1 px-6 py-12 font-sans sm:px-8 sm:py-16">
         <ProfileHeader />
+        <ContentSection title="In Print" headingId="in-print-heading">
+          <ul role="list">
+            <li className="motion-enter" style={{ animationDelay: "120ms" }}>
+              <ContentEntry
+                title="Detection of Cipher Types Using Machine Learning Techniques"
+                href="https://link.springer.com/chapter/10.1007/978-981-99-3734-9_25"
+                description={
+                  <>
+                    Computational Intelligence in Pattern Recognition · Springer ·{" "}
+                    <time dateTime="2023">2023</time>
+                  </>
+                }
+              />
+            </li>
+          </ul>
+        </ContentSection>
         <FeaturedProjects />
-        <Link
-          href="/projects"
-          className="projects-link mt-8 inline-flex min-h-11 items-center gap-1 rounded-sm text-sm text-foreground/65 underline decoration-foreground/25 underline-offset-4 hover:text-foreground hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-        >
-          View all projects
-          <span aria-hidden="true" className="projects-link-arrow inline-block">
-            →
-          </span>
-        </Link>
-        <p className="mt-6 text-sm leading-6 text-foreground/65">
+        <p className="mt-2 text-sm leading-6 text-foreground/65">
           Outside of code, I stream games as{" "}
           <a
             href="https://www.youtube.com/@devastrator25902"
